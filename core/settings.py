@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-yl&i8hclmbth#7yq57$@=mj=w&1-%9!hrive%#8(ff2)d=^_^r'
+SECRET_KEY = 'django-insecure-1p##a8k+(l9x7-_th584e6o3b881%mpjv6p-gm5!-s)@)2k*k&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
+    'rest_framework',
+    'spatialdata'
 ]
 
 MIDDLEWARE = [
@@ -75,10 +78,15 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'mydatabase',
+        'USER': 'django',
+        'PASSWORD': 'admin',
+        'HOST': 'postgres',
+        'PORT': ''
     }
 }
+
 
 
 # Password validation
@@ -121,3 +129,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# GDAL_LIBRARY_PATH = 'C:\\OSGeo4W\\bin'

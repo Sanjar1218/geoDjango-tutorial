@@ -1,3 +1,5 @@
-from django.db import models
+from django.contrib.gis.db import models
 
-# Create your models here.
+class Zipcode(models.Model):
+    code = models.CharField(max_length=5)
+    poly = models.PolygonField()
