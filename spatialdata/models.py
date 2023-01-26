@@ -1,5 +1,5 @@
 from django.contrib.gis.db import models
 
 class Zipcode(models.Model):
-    code = models.CharField(max_length=5)
-    poly = models.PolygonField()
+    address = models.CharField(max_length=255)
+    home = models.PolygonField()
