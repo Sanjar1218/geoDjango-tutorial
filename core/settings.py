@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'mydatabase',
         'USER': 'django',
         'PASSWORD': 'admin',
-        'HOST': 'postgres',
+        'HOST': '',
         'PORT': ''
     }
 }
